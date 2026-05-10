@@ -315,12 +315,6 @@ a:hover {
   box-shadow: 0 4px 12px rgba(41, 196, 169, 0.15);
 }
 
-.activity-card__emoji {
-  font-size: 2rem;
-  margin-bottom: var(--space-sm);
-  min-height: 2.5rem;
-}
-
 .activity-card__title {
   font-family: var(--font-heading);
   font-size: 1rem;
@@ -453,11 +447,6 @@ a:hover {
   border: 1px solid var(--color-light);
 }
 
-.indice-detail__emoji {
-  font-size: 4rem;
-  margin-bottom: var(--space-md);
-}
-
 .indice-detail__title {
   font-family: var(--font-heading);
   font-size: 1.6rem;
@@ -527,10 +516,6 @@ a:hover {
     padding: var(--space-2xl) var(--space-3xl);
   }
 
-  .indice-detail__emoji {
-    font-size: 5rem;
-  }
-
   .indice-detail__title {
     font-size: 2rem;
   }
@@ -541,8 +526,8 @@ a:hover {
 }
 
 @media (min-width: 72rem) {
-  .indice-detail__emoji {
-    font-size: 6rem;
+  .indice-detail__title {
+    font-size: 2.2rem;
   }
 }
 

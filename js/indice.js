@@ -51,14 +51,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // ===========================================================
   // 4. AFFICHER L'INDICE
   // ===========================================================
-  document.title = `${indice.emoji || ''} ${indice.title} — Kermesse 2026`;
+  document.title = `${indice.title} — Kermesse 2026`;
 
   container.innerHTML = `
     <div class="indice-detail__header">
       <span class="indice-detail__badge">Indice ${indice.num}</span>
       <span class="indice-detail__niveau">${niveauLabels[niveau] || niveau}</span>
     </div>
-    <div class="indice-detail__emoji">${indice.emoji || '🔍'}</div>
     <h1 class="indice-detail__title" id="indice-title">${indice.title}</h1>
     <p class="indice-detail__desc">${indice.fullDesc}</p>
     <div class="indice-detail__meta">

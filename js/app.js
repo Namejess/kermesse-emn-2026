@@ -48,7 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
       <a href="indice.html?niveau=${niveau}&num=${indice.num}" class="activity-card-link">
         <div class="activity-card">
           <span class="activity-card__badge">Indice ${indice.num}</span>
-          <div class="activity-card__emoji">${indice.emoji || ''}</div>
           <h3 class="activity-card__title">${indice.title}</h3>
           <p class="activity-card__desc">${indice.shortDesc}</p>
         </div>
