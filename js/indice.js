@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ===========================================================
   const niveauLabels = {
     maternelle: 'Maternelle',
-    primaire: 'Primaire',
+    primaire: 'Elémentaire',
     college: 'Collège'
   };
 
@@ -70,7 +70,17 @@ document.addEventListener('DOMContentLoaded', () => {
         <span class="indice-detail__meta-value">${indice.age}</span>
       </div>
     </div>
-    <a href="index.html" class="about__link">&larr; Retour aux indices</a>
+    <a href="index.html" id="back-link" class="about__link">&larr; Retour aux indices</a>
   `;
+
+  // Gestion du retour : préserver l'onglet actif
+  const backLink = document.getElementById('back-link');
+  if (backLink) {
+    backLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      sessionStorage.setItem('activeTab', niveau);
+      window.location.href = 'index.html#indices';
+    });
+  }
 
 });

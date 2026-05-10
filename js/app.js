@@ -48,8 +48,9 @@ document.addEventListener('DOMContentLoaded', () => {
       <a href="indice.html?niveau=${niveau}&num=${indice.num}" class="activity-card-link">
         <div class="activity-card">
           <span class="activity-card__badge">Indice ${indice.num}</span>
-          <h3 class="activity-card__title">${indice.title}</h3>
-          <p class="activity-card__desc">${indice.shortDesc}</p>
+          <div class="activity-card__mystery">
+            <span class="mystery-q">?</span>
+          </div>
         </div>
       </a>
     `).join('');
@@ -61,32 +62,40 @@ document.addEventListener('DOMContentLoaded', () => {
   renderCards('college');
 
   // ===========================================================
-  // 3. TABS — Maternelle / Primaire / Collège
+  // 3. GESTION DES ONGLETS
   // ===========================================================
   const tabs = document.querySelectorAll('.tab');
   const panels = document.querySelectorAll('.tab-panel');
 
+  function activateTab(tabName, scroll = false) {
+    tabs.forEach(t => {
+      const isActive = t.dataset.tab === tabName;
+      t.setAttribute('aria-selected', isActive);
+      t.classList.toggle('tab--active', isActive);
+    });
+    panels.forEach(p => {
+      p.hidden = p.id !== `panel-${tabName}`;
+    });
+
+    if (scroll) {
+      const target = document.getElementById('indices');
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  }
+
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
-      const target = tab.dataset.tab;
-
-      tabs.forEach(t => {
-        t.classList.remove('active');
-        t.setAttribute('aria-selected', 'false');
-      });
-      tab.classList.add('active');
-      tab.setAttribute('aria-selected', 'true');
-
-      panels.forEach(panel => {
-        panel.classList.remove('active');
-        panel.hidden = true;
-      });
-      const targetPanel = document.getElementById(`panel-${target}`);
-      if (targetPanel) {
-        targetPanel.classList.add('active');
-        targetPanel.hidden = false;
-      }
+      activateTab(tab.dataset.tab, true);
     });
   });
+
+  // Restaurer l'onglet actif depuis sessionStorage (retour depuis indice.html)
+  const savedTab = sessionStorage.getItem('activeTab');
+  if (savedTab && INDICES[savedTab]) {
+    activateTab(savedTab, false);
+    sessionStorage.removeItem('activeTab');
+  }
 
 });

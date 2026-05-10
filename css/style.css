@@ -315,6 +315,33 @@ a:hover {
   box-shadow: 0 4px 12px rgba(41, 196, 169, 0.15);
 }
 
+/* ---- Mystery card ---- */
+.activity-card__mystery {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+}
+
+.mystery-q {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  opacity: 0.3;
+  animation: mystery-pulse 3s ease-in-out infinite;
+}
+
+@keyframes mystery-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.3; }
+  50% { transform: scale(1.1); opacity: 0.6; }
+}
+
+.activity-card-link:hover .mystery-q {
+  opacity: 0.8;
+  color: var(--color-accent);
+}
+
 .activity-card__title {
   font-family: var(--font-heading);
   font-size: 1rem;
