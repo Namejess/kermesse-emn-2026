@@ -60,16 +60,6 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
     <h1 class="indice-detail__title" id="indice-title">${indice.title}</h1>
     <p class="indice-detail__desc">${indice.fullDesc}</p>
-    <div class="indice-detail__meta">
-      <div class="indice-detail__meta-item">
-        <span class="indice-detail__meta-label">Durée</span>
-        <span class="indice-detail__meta-value">${indice.duration}</span>
-      </div>
-      <div class="indice-detail__meta-item">
-        <span class="indice-detail__meta-label">Âge</span>
-        <span class="indice-detail__meta-value">${indice.age}</span>
-      </div>
-    </div>
     <a href="index.html" id="back-link" class="about__link">&larr; Retour aux indices</a>
   `;
 

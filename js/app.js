@@ -71,9 +71,10 @@ document.addEventListener('DOMContentLoaded', () => {
     tabs.forEach(t => {
       const isActive = t.dataset.tab === tabName;
       t.setAttribute('aria-selected', isActive);
-      t.classList.toggle('tab--active', isActive);
+      t.classList.toggle('active', isActive);
     });
     panels.forEach(p => {
+      p.classList.toggle('active', p.id === `panel-${tabName}`);
       p.hidden = p.id !== `panel-${tabName}`;
     });
 
