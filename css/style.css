@@ -315,7 +315,22 @@ a:hover {
   box-shadow: 0 4px 12px rgba(41, 196, 169, 0.15);
 }
 
-/* ---- Mystery card ---- */
+.activity-card__title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.5rem;
+}
+
+.activity-card-link:hover .activity-card__title {
+  color: var(--color-accent);
+}
+
+/* ---- Mystery card (indices 2-6) ---- */
 .activity-card__mystery {
   display: flex;
   align-items: center;
@@ -340,14 +355,6 @@ a:hover {
 .activity-card-link:hover .mystery-q {
   opacity: 0.8;
   color: var(--color-accent);
-}
-
-.activity-card__title {
-  font-family: var(--font-heading);
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--color-primary);
-  margin-bottom: var(--space-xs);
 }
 
 .activity-card__desc {

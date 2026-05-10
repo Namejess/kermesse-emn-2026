@@ -44,16 +44,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const indices = INDICES[niveau] || [];
 
-    grid.innerHTML = indices.map(indice => `
+    grid.innerHTML = indices.map(indice => {
+      const isRevealed = indice.num === 1;
+      return `
       <a href="indice.html?niveau=${niveau}&num=${indice.num}" class="activity-card-link">
         <div class="activity-card">
           <span class="activity-card__badge">Indice ${indice.num}</span>
-          <div class="activity-card__mystery">
-            <span class="mystery-q">?</span>
-          </div>
+          ${isRevealed
+            ? `<span class="activity-card__title">${indice.title}</span>`
+            : `<div class="activity-card__mystery"><span class="mystery-q">?</span></div>`
+          }
         </div>
       </a>
-    `).join('');
+    `}).join('');
   }
 
   // Render all levels
