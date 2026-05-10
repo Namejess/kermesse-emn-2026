@@ -1,5 +1,5 @@
 /* ============================================================
-   Kermesse Biodiversité — Espace Montessori Nancy
+   Enquête 2026 — Espace Montessori Nancy
    Mobile-first · Charte : #09454F · #29C4A9 · #FF6900
    ============================================================ */
 
@@ -77,7 +77,7 @@ a:hover {
 
 .container {
   width: 100%;
-  max-width: 72rem;   /* 1152px */
+  max-width: 72rem;
   margin: 0 auto;
   padding: 0 var(--space-lg);
 }
@@ -122,8 +122,14 @@ a:hover {
   gap: var(--space-md);
 }
 
+.hero__logo-wrap {
+  /* Centered on mobile by default */
+  display: flex;
+  justify-content: center;
+}
+
 .hero__logo {
-  width: 140px;
+  width: 120px;
   height: auto;
   filter: drop-shadow(0 2px 8px rgba(0,0,0,0.15));
 }
@@ -138,7 +144,7 @@ a:hover {
 
 .hero__title {
   font-family: var(--font-heading);
-  font-size: 2.8rem;
+  font-size: 2.5rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   line-height: 1;
@@ -147,24 +153,10 @@ a:hover {
 }
 
 .hero__subtitle {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: 600;
   color: var(--color-secondary);
   margin-top: -0.25rem;
-}
-
-.hero__theme {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-md);
-  background: var(--color-accent);
-  color: #fff;
-  font-weight: 700;
-  font-size: 1.1rem;
-  padding: var(--space-sm) var(--space-lg);
-  border-radius: var(--radius-full);
-  box-shadow: 0 4px 14px rgba(255, 105, 0, 0.35);
-  margin-top: var(--space-sm);
 }
 
 .hero__info {
@@ -206,152 +198,196 @@ a:hover {
 }
 
 /* ============================================================
-   CATCHPHRASE
+   COUNTDOWN
    ============================================================ */
-.catchphrase {
-  text-align: center;
-  padding: var(--space-xl) 0;
-  border-top: 3px dashed var(--color-secondary);
-  border-bottom: 3px dashed var(--color-secondary);
-  margin: 0 var(--space-lg);
-}
-
-.catchphrase p {
-  font-family: var(--font-heading);
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: var(--color-primary);
-}
-
-.catchphrase__break {
-  display: block;
-  margin-top: var(--space-xs);
-}
-
-/* ============================================================
-   TABS (programme par niveau)
-   ============================================================ */
-.tabs {
-  padding: var(--space-2xl) 0;
-  background: var(--color-gray);
-}
-
-/* Navigation */
-.tabs__nav {
+.countdown {
   display: flex;
-  gap: var(--space-sm);
-  justify-content: center;
-  margin-bottom: var(--space-xl);
-  flex-wrap: wrap;
+  align-items: center;
+  gap: 0;
+  margin-top: var(--space-md);
+  font-family: var(--font-heading);
 }
 
-.tabs__btn {
+.countdown__item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.15rem;
-  padding: var(--space-md) var(--space-lg);
-  border: 2px solid var(--color-light);
-  border-radius: var(--radius-md);
-  background: var(--color-bg);
-  cursor: pointer;
-  transition: all 0.25s ease;
-  font-family: var(--font-heading);
-  min-width: 8rem;
-  position: relative;
+  min-width: 3rem;
 }
 
-.tabs__btn:hover {
-  border-color: var(--color-secondary);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(41, 196, 169, 0.15);
-}
-
-.tabs__btn.is-active {
-  border-color: var(--color-secondary);
-  background: var(--color-secondary);
-  color: #fff;
-  box-shadow: 0 4px 14px rgba(41, 196, 169, 0.3);
-}
-
-.tabs__btn-icon {
-  font-size: 1.5rem;
+.countdown__num {
+  font-size: 2rem;
+  font-weight: 800;
   line-height: 1;
+  color: var(--color-highlight);
+  text-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
-.tabs__btn-label {
+.countdown__label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.8;
+  margin-top: 0.2rem;
+}
+
+.countdown__sep {
+  font-size: 1.8rem;
   font-weight: 700;
-  font-size: 0.9rem;
+  opacity: 0.4;
+  margin: 0 0.3rem;
+  margin-bottom: 1.2rem;
 }
 
-.tabs__btn-age {
-  font-size: 0.75rem;
-  opacity: 0.7;
-  font-weight: 400;
+.countdown__event {
+  font-size: 0.85rem;
+  opacity: 0.85;
+  margin-top: var(--space-sm);
 }
 
-.tabs__btn.is-active .tabs__btn-age {
-  opacity: 0.9;
-}
-
-/* Panels */
-.tabs__panel {
-  display: none;
-  animation: tab-fade-in 0.3s ease;
-}
-
-.tabs__panel.is-active {
-  display: block;
-}
-
-@keyframes tab-fade-in {
-  from { opacity: 0; transform: translateY(8px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-.tabs__panel-header {
+/* ============================================================
+   CLUE — Indice de la semaine
+   ============================================================ */
+.clue {
+  padding: var(--space-2xl) 0;
   text-align: center;
-  font-size: 1rem;
-  font-weight: 600;
+}
+
+.clue__badge {
+  display: inline-block;
+  background: var(--color-accent);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-md);
+}
+
+.clue__week {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 700;
   color: var(--color-primary);
   margin-bottom: var(--space-lg);
-  padding: var(--space-sm) var(--space-md);
-  background: rgba(41, 196, 169, 0.08);
-  border-radius: var(--radius-md);
 }
 
-
-.card {
-  background: var(--color-bg);
-  border-radius: var(--radius-md);
-  padding: var(--space-lg);
-  text-align: center;
-  border: 2px solid var(--color-light);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  transition: transform 0.2s, box-shadow 0.2s;
+.clue__card {
+  background: linear-gradient(135deg, var(--color-primary), #0B5E6B);
+  color: #fff;
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl) var(--space-lg);
+  max-width: 36rem;
+  margin: 0 auto;
+  box-shadow: 0 6px 24px rgba(9, 69, 79, 0.25);
+  position: relative;
+  overflow: hidden;
+  min-height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(9, 69, 79, 0.1);
+.clue__card::before {
+  content: '🔍';
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+  font-size: 4rem;
+  opacity: 0.1;
+  transform: rotate(15deg);
 }
 
-.card__icon {
-  font-size: 2.2rem;
-  margin-bottom: var(--space-sm);
-}
-
-.card__title {
+.clue__text {
   font-family: var(--font-heading);
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--color-primary);
-  margin-bottom: var(--space-xs);
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.6;
+  position: relative;
+  z-index: 1;
 }
 
-.card__desc {
+.clue__hint {
   font-size: 0.85rem;
   color: var(--color-text-light);
+  margin-top: var(--space-md);
+}
+
+/* ============================================================
+   ARCHIVE — Indices précédents
+   ============================================================ */
+.archive {
+  padding: 0 0 var(--space-2xl);
+}
+
+.archive__toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  width: 100%;
+  padding: var(--space-md);
+  background: var(--color-gray);
+  border: 2px solid var(--color-light);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  transition: all 0.25s ease;
+}
+
+.archive__toggle:hover {
+  background: var(--color-light);
+  border-color: var(--color-secondary);
+}
+
+.archive__toggle[aria-expanded="true"] .archive__arrow {
+  transform: rotate(180deg);
+}
+
+.archive__arrow {
+  transition: transform 0.25s ease;
+  font-size: 0.8rem;
+}
+
+.archive__list {
+  display: none;
+  margin-top: var(--space-md);
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.archive__list.is-open {
+  display: flex;
+}
+
+.archive__item {
+  display: flex;
+  gap: var(--space-md);
+  align-items: flex-start;
+  background: var(--color-gray);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  border-left: 4px solid var(--color-secondary);
+}
+
+.archive__item-week {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--color-secondary);
+  white-space: nowrap;
+  min-width: 4.5rem;
+}
+
+.archive__item-text {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  line-height: 1.5;
 }
 
 /* ============================================================
@@ -497,16 +533,23 @@ a:hover {
     padding: var(--space-3xl) 0 var(--space-2xl);
   }
 
+  .hero__logo-wrap {
+    position: absolute;
+    top: var(--space-lg);
+    left: var(--space-lg);
+    justify-content: flex-start;
+  }
+
   .hero__logo {
-    width: 180px;
+    width: 132px;
   }
 
   .hero__title {
-    font-size: 4rem;
+    font-size: 3.5rem;
   }
 
   .hero__subtitle {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 
   .hero__info {
@@ -518,26 +561,20 @@ a:hover {
     flex: 1;
   }
 
-  .activities__grid,
-  .tabs .activities__grid {
-    grid-template-columns: 1fr 1fr;
+  .countdown__num {
+    font-size: 2.5rem;
   }
 
-  .tabs__btn {
-    min-width: 10rem;
-    padding: var(--space-lg) var(--space-xl);
+  .countdown__item {
+    min-width: 3.5rem;
   }
 
-  .tabs__btn-icon {
-    font-size: 1.8rem;
+  .clue__card {
+    padding: var(--space-2xl) var(--space-xl);
   }
 
-  .tabs__panel-header {
-    font-size: 1.1rem;
-  }
-
-  .catchphrase p {
-    font-size: 1.2rem;
+  .clue__text {
+    font-size: 1.3rem;
   }
 
   .food__banner {
@@ -574,42 +611,23 @@ a:hover {
 @media (min-width: 72rem) {
 
   .hero__title {
-    font-size: 5rem;
+    font-size: 4.5rem;
   }
 
   .hero__logo {
-    width: 220px;
+    width: 160px;
   }
 
-  .activities__grid,
-  .tabs .activities__grid {
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: var(--space-lg);
+  .countdown__num {
+    font-size: 3rem;
   }
 
-  .card {
-    padding: var(--space-xl);
+  .countdown__item {
+    min-width: 4rem;
   }
 
-  .card__icon {
-    font-size: 2.6rem;
-  }
-
-  .card__title {
-    font-size: 1.1rem;
-  }
-
-  .tabs__btn {
-    min-width: 12rem;
-    padding: var(--space-lg) var(--space-2xl);
-  }
-
-  .tabs__btn-icon {
-    font-size: 2rem;
-  }
-
-  .catchphrase p {
-    font-size: 1.3rem;
+  .clue__text {
+    font-size: 1.45rem;
   }
 
   .food__banner {
@@ -633,11 +651,6 @@ a:hover {
   }
   .hero__info-item {
     background: rgba(255,255,255,0.12) !important;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-  }
-  .hero__theme {
-    background: var(--color-accent) !important;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }

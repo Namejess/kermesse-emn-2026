@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kermesse 2026 — Espace Montessori Nancy</title>
-  <meta name="description" content="Kermesse de l'Espace Montessori Nancy — Dimanche 21 juin 2026 — Thème : La Biodiversité">
+  <meta name="description" content="Kermesse de l'Espace Montessori Nancy — Suis les indices chaque semaine pour découvrir le thème mystère !">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
-  <script src="js/tabs.js" defer></script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔍</text></svg>">
+  <script src="js/app.js" defer></script>
 </head>
 <body>
 
@@ -18,30 +18,50 @@
   <header class="hero" id="hero">
     <div class="hero__bg"></div>
     <div class="hero__inner container">
-      <img
-        src="images/logo-espace-montessori-nancy-couleur.png"
-        alt="Espace Montessori Nancy"
-        class="hero__logo"
-        width="288"
-        height="193"
-        loading="lazy"
-      >
+      <div class="hero__logo-wrap">
+        <img
+          src="images/logo-espace-montessori-nancy-couleur.png"
+          alt="Espace Montessori Nancy"
+          class="hero__logo"
+          width="288"
+          height="193"
+          loading="lazy"
+        >
+      </div>
       <p class="hero__tagline">Imaginons demain aujourd'hui</p>
       <h1 class="hero__title">Kermesse 2026</h1>
-      <p class="hero__subtitle">de l'École</p>
+      <p class="hero__subtitle">Espace Montessori Nancy</p>
 
-      <div class="hero__theme">
-        <span>🌿</span>
-        <span>La Biodiversité</span>
-        <span>🦋</span>
+      <!-- Countdown -->
+      <div class="countdown" id="countdown" aria-label="Compte à rebours">
+        <div class="countdown__item">
+          <span class="countdown__num" id="countdown-days">--</span>
+          <span class="countdown__label">jours</span>
+        </div>
+        <div class="countdown__sep">:</div>
+        <div class="countdown__item">
+          <span class="countdown__num" id="countdown-hours">--</span>
+          <span class="countdown__label">h</span>
+        </div>
+        <div class="countdown__sep">:</div>
+        <div class="countdown__item">
+          <span class="countdown__num" id="countdown-minutes">--</span>
+          <span class="countdown__label">min</span>
+        </div>
+        <div class="countdown__sep">:</div>
+        <div class="countdown__item">
+          <span class="countdown__num" id="countdown-seconds">--</span>
+          <span class="countdown__label">s</span>
+        </div>
       </div>
+      <p class="countdown__event">🎯 Rendez-vous le <strong>lundi 8 juin 2026</strong> à 8h</p>
 
       <div class="hero__info">
         <div class="hero__info-item">
           <span class="hero__info-icon">📅</span>
           <div>
-            <strong>Dimanche 21 juin 2026</strong>
-            <span>de 14h à 18h</span>
+            <strong>Lundi 8 juin 2026</strong>
+            <span>à partir de 8h</span>
           </div>
         </div>
         <div class="hero__info-item">
@@ -55,166 +75,41 @@
     </div>
   </header>
 
-  <!-- ===== CATCHPHRASE ===== -->
-  <section class="catchphrase" aria-label="Accroche">
+  <!-- ===== INDICE DE LA SEMAINE ===== -->
+  <section class="clue" id="clue" aria-labelledby="clue-title">
     <div class="container">
-      <p>
-        🌍 Viens explorer la biodiversité autour de toi&nbsp;!
-        <span class="catchphrase__break">Un après-midi magique pour petits et grands 🌍</span>
-      </p>
+      <div class="clue__badge">🔍 Indice de la semaine</div>
+      <h2 class="clue__week" id="clue-title">Semaine <span id="clue-week-num">1</span></h2>
+      <div class="clue__card" id="clue-card">
+        <p class="clue__text" id="clue-text">
+          — Aucun indice publié pour le moment —
+        </p>
+      </div>
+      <p class="clue__hint">Un nouvel indice chaque semaine jusqu'au jour J.</p>
     </div>
   </section>
 
-  <!-- ===== PROGRAMME AVEC ONGLETS ===== -->
-  <section class="tabs" id="programme" aria-labelledby="tabs-title">
+  <!-- ===== ARCHIVE DES INDICES ===== -->
+  <section class="archive" id="archive" aria-labelledby="archive-title">
     <div class="container">
-      <h2 class="section-title" id="tabs-title">✨ Au programme ✨</h2>
-
-      <!-- Tab navigation -->
-      <div class="tabs__nav" role="tablist" aria-label="Niveaux scolaires">
-        <button class="tabs__btn is-active" role="tab" aria-selected="true" aria-controls="panel-maternelle" id="tab-maternelle" data-tab="maternelle">
-          <span class="tabs__btn-icon">🧸</span>
-          <span class="tabs__btn-label">Maternelle</span>
-          <span class="tabs__btn-age">3-6 ans</span>
-        </button>
-        <button class="tabs__btn" role="tab" aria-selected="false" aria-controls="panel-primaire" id="tab-primaire" data-tab="primaire">
-          <span class="tabs__btn-icon">📚</span>
-          <span class="tabs__btn-label">Primaire</span>
-          <span class="tabs__btn-age">6-11 ans</span>
-        </button>
-        <button class="tabs__btn" role="tab" aria-selected="false" aria-controls="panel-college" id="tab-college" data-tab="college">
-          <span class="tabs__btn-icon">🎒</span>
-          <span class="tabs__btn-label">Collège</span>
-          <span class="tabs__btn-age">11-15 ans</span>
-        </button>
-      </div>
-
-      <!-- === MATERNELLE === -->
-      <div class="tabs__panel is-active" id="panel-maternelle" role="tabpanel" aria-labelledby="tab-maternelle">
-        <div class="tabs__panel-header">
-          <p>Les tout-petits explorent la nature à leur rythme 🌟</p>
-        </div>
-        <div class="activities__grid">
-          <article class="card">
-            <div class="card__icon">🦋</div>
-            <h3 class="card__title">Chasse aux papillons</h3>
-            <p class="card__desc">Découvre les papillons du parc avec un filet</p>
-          </article>
-          <article class="card">
-            <div class="card__icon">🌱</div>
-            <h3 class="card__title">Atelier jardinage</h3>
-            <p class="card__desc">Plante ta propre graine dans un pot décoré</p>
-          </article>
-          <article class="card">
-            <div class="card__icon">🎨</div>
-            <h3 class="card__title">Maquillage nature</h3>
-            <p class="card__desc">Transforme-toi en papillon ou en fleur</p>
-          </article>
-          <article class="card">
-            <div class="card__icon">📖</div>
-            <h3 class="card__title">Coin lecture nature</h3>
-            <p class="card__desc">Histoires d'animaux sous le tipi</p>
-          </article>
-          <article class="card">
-            <div class="card__icon">🎵</div>
-            <h3 class="card__title">Éveil musical</h3>
-            <p class="card__desc">Chansons de la nature et comptines</p>
-          </article>
-          <article class="card">
-            <div class="card__icon">🧩</div>
-            <h3 class="card__title">Jeux en bois</h3>
-            <p class="card__desc">Puzzles et jeux d'animaux</p>
-          </article>
-        </div>
-      </div>
-
-      <!-- === PRIMAIRE === -->
-      <div class="tabs__panel" id="panel-primaire" role="tabpanel" aria-labelledby="tab-primaire">
-        <div class="tabs__panel-header">
-          <p>Les grands explorent, expérimentent et s'amusent 🚀</p>
-        </div>
-        <div class="activities__grid">
-          <article class="card">
-            <div class="card__icon">🐝</div>
-            <h3 class="card__title">Ruche pédagogique</h3>
-            <p class="card__desc">Observe les abeilles et déguste du miel</p>
-          </article>
-          <article class="card">
-            <div class="card__icon">🌊</div>
-            <h3 class="card__title">Océan virtuel</h3>
-            <p class="card__desc">Plonge dans l'océan en réalité augmentée</p>
-          </article>
-          <article class="card">
-            <div class="card__icon">🌱</div>
-            <h3 class="card__title">Atelier jardinage</h3>
-            <p class="card__desc">Crée ton herbier et rempote une plante</p>
-          </article>
-          <article class="card">
-            <div class="card__icon">🏆</div>
-            <h3 class="card__title">Grand jeu de piste</h3>
-            <p class="card__desc">Enquête nature dans le parc</p>
-          </article>
-          <article class="card">
-            <div class="card__icon">♻️</div>
-            <h3 class="card__title">Atelier recyclage</h3>
-            <p class="card__desc">Fabrique un objet à partir de matériaux recyclés</p>
-          </article>
-          <article class="card">
-            <div class="card__icon">🎨</div>
-            <h3 class="card__title">Fresque collaborative</h3>
-            <p class="card__desc">Peins une grande fresque de la biodiversité</p>
-          </article>
-        </div>
-      </div>
-
-      <!-- === COLLÈGE === -->
-      <div class="tabs__panel" id="panel-college" role="tabpanel" aria-labelledby="tab-college">
-        <div class="tabs__panel-header">
-          <p>Les plus grands passent à l'action et encadrent 🌟</p>
-        </div>
-        <div class="activities__grid">
-          <article class="card">
-            <div class="card__icon">🌊</div>
-            <h3 class="card__title">Océan virtuel</h3>
-            <p class="card__desc">Animation et démonstration pour les plus jeunes</p>
-          </article>
-          <article class="card">
-            <div class="card__icon">🧺</div>
-            <h3 class="card__title">Grande tombola</h3>
-            <p class="card__desc">Tente de gagner des cadeaux nature</p>
-          </article>
-          <article class="card">
-            <div class="card__icon">🎤</div>
-            <h3 class="card__title">Scène ouverte</h3>
-            <p class="card__desc">Spectacle, musique et poésie sur le thème de la nature</p>
-          </article>
-          <article class="card">
-            <div class="card__icon">🛠️</div>
-            <h3 class="card__title">Encadrement</h3>
-            <p class="card__desc">Aide à l'animation des ateliers pour les petits</p>
-          </article>
-          <article class="card">
-            <div class="card__icon">📸</div>
-            <h3 class="card__title">Exposition photo</h3>
-            <p class="card__desc">Photos de la biodiversité prises par les élèves</p>
-          </article>
-          <article class="card">
-            <div class="card__icon">🌿</div>
-            <h3 class="card__title">Stand de sensibilisation</h3>
-            <p class="card__desc">Agir pour la planète : éco-gestes et engagements</p>
-          </article>
-        </div>
+      <button class="archive__toggle" id="archive-toggle" aria-expanded="false" aria-controls="archive-list">
+        <span>📂</span>
+        <span>Indices précédents</span>
+        <span class="archive__arrow">▾</span>
+      </button>
+      <div class="archive__list" id="archive-list" role="list">
+        <!-- Rempli par JS -->
       </div>
     </div>
   </section>
 
-  <!-- ===== FOOD ===== -->
+  <!-- ===== BUVRETTE ===== -->
   <section class="food" id="food" aria-labelledby="food-title">
     <div class="container">
       <div class="food__banner">
         <span>🧁</span>
         <div>
-          <h2 class="food__title" id="food-title">Buvette &amp; Gâteaux bio</h2>
+          <h2 class="food__title" id="food-title">Buvette &amp; Gourmandises</h2>
           <p>Sur place toute l'après-midi</p>
         </div>
         <span>🥤</span>
@@ -230,12 +125,12 @@
         <p>
           <strong>L'Espace Montessori Nancy</strong> regroupe une micro-crèche, une école
           maternelle et élémentaire, un collège ainsi qu'un accueil de loisirs,
-          offrant un accompagnement complet pour les enfants de 0 à 15 ans.
+          proposant un accompagnement complet pour les enfants de 0 à 15 ans.
         </p>
         <p>
-          Située dans un environnement verdoyant, notre structure propose un cadre
-          bienveillant et stimulant, fidèle aux principes de la pédagogie Montessori,
-          où chaque enfant peut grandir à son rythme.
+          Notre structure propose un cadre bienveillant et stimulant, fidèle aux
+          principes de la pédagogie Montessori, où chaque enfant peut grandir
+          à son rythme.
         </p>
       </div>
       <a href="https://www.espacemontessorinancy.fr" target="_blank" rel="noopener" class="about__link">
@@ -266,12 +161,12 @@
       <div class="footer__org">
         <h3 class="footer__heading">Organisé par</h3>
         <p>Association des Parents d'Élèves</p>
-        <p class="footer__date">Kermesse 2026 — La Biodiversité</p>
+        <p class="footer__date">Kermesse 2026</p>
       </div>
     </div>
     <div class="footer__bottom">
       <div class="container">
-        <p>© 2026 Espace Montessori Nancy — Fait avec 🌿 pour la planète</p>
+        <p>© 2026 Espace Montessori Nancy</p>
       </div>
     </div>
   </footer>
