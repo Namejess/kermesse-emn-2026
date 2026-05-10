@@ -612,10 +612,23 @@ a:hover {
 }
 
 .footer__contact p,
-.footer__org p {
+.footer__org p,
+.footer__link {
   font-size: 0.85rem;
   margin-bottom: var(--space-xs);
   opacity: 0.9;
+}
+
+.footer__link {
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.footer__link:hover {
+  opacity: 1;
+  color: var(--color-secondary);
+  text-decoration: underline;
 }
 
 .footer__date {
