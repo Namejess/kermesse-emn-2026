@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+  <script src="js/tabs.js" defer></script>
 </head>
 <body>
 
@@ -64,48 +65,145 @@
     </div>
   </section>
 
-  <!-- ===== ACTIVITIES ===== -->
-  <section class="activities" id="activities" aria-labelledby="activities-title">
+  <!-- ===== PROGRAMME AVEC ONGLETS ===== -->
+  <section class="tabs" id="programme" aria-labelledby="tabs-title">
     <div class="container">
-      <h2 class="section-title" id="activities-title">✨ Au programme ✨</h2>
-      <div class="activities__grid">
+      <h2 class="section-title" id="tabs-title">✨ Au programme ✨</h2>
 
-        <article class="card">
-          <div class="card__icon">🦋</div>
-          <h3 class="card__title">Chasse aux papillons</h3>
-          <p class="card__desc">Découvre les papillons du parc</p>
-        </article>
+      <!-- Tab navigation -->
+      <div class="tabs__nav" role="tablist" aria-label="Niveaux scolaires">
+        <button class="tabs__btn is-active" role="tab" aria-selected="true" aria-controls="panel-maternelle" id="tab-maternelle" data-tab="maternelle">
+          <span class="tabs__btn-icon">🧸</span>
+          <span class="tabs__btn-label">Maternelle</span>
+          <span class="tabs__btn-age">3-6 ans</span>
+        </button>
+        <button class="tabs__btn" role="tab" aria-selected="false" aria-controls="panel-primaire" id="tab-primaire" data-tab="primaire">
+          <span class="tabs__btn-icon">📚</span>
+          <span class="tabs__btn-label">Primaire</span>
+          <span class="tabs__btn-age">6-11 ans</span>
+        </button>
+        <button class="tabs__btn" role="tab" aria-selected="false" aria-controls="panel-college" id="tab-college" data-tab="college">
+          <span class="tabs__btn-icon">🎒</span>
+          <span class="tabs__btn-label">Collège</span>
+          <span class="tabs__btn-age">11-15 ans</span>
+        </button>
+      </div>
 
-        <article class="card">
-          <div class="card__icon">🌱</div>
-          <h3 class="card__title">Atelier jardinage</h3>
-          <p class="card__desc">Plante ta propre graine</p>
-        </article>
+      <!-- === MATERNELLE === -->
+      <div class="tabs__panel is-active" id="panel-maternelle" role="tabpanel" aria-labelledby="tab-maternelle">
+        <div class="tabs__panel-header">
+          <p>Les tout-petits explorent la nature à leur rythme 🌟</p>
+        </div>
+        <div class="activities__grid">
+          <article class="card">
+            <div class="card__icon">🦋</div>
+            <h3 class="card__title">Chasse aux papillons</h3>
+            <p class="card__desc">Découvre les papillons du parc avec un filet</p>
+          </article>
+          <article class="card">
+            <div class="card__icon">🌱</div>
+            <h3 class="card__title">Atelier jardinage</h3>
+            <p class="card__desc">Plante ta propre graine dans un pot décoré</p>
+          </article>
+          <article class="card">
+            <div class="card__icon">🎨</div>
+            <h3 class="card__title">Maquillage nature</h3>
+            <p class="card__desc">Transforme-toi en papillon ou en fleur</p>
+          </article>
+          <article class="card">
+            <div class="card__icon">📖</div>
+            <h3 class="card__title">Coin lecture nature</h3>
+            <p class="card__desc">Histoires d'animaux sous le tipi</p>
+          </article>
+          <article class="card">
+            <div class="card__icon">🎵</div>
+            <h3 class="card__title">Éveil musical</h3>
+            <p class="card__desc">Chansons de la nature et comptines</p>
+          </article>
+          <article class="card">
+            <div class="card__icon">🧩</div>
+            <h3 class="card__title">Jeux en bois</h3>
+            <p class="card__desc">Puzzles et jeux d'animaux</p>
+          </article>
+        </div>
+      </div>
 
-        <article class="card">
-          <div class="card__icon">🐝</div>
-          <h3 class="card__title">Ruche pédagogique</h3>
-          <p class="card__desc">Les abeilles et le miel</p>
-        </article>
+      <!-- === PRIMAIRE === -->
+      <div class="tabs__panel" id="panel-primaire" role="tabpanel" aria-labelledby="tab-primaire">
+        <div class="tabs__panel-header">
+          <p>Les grands explorent, expérimentent et s'amusent 🚀</p>
+        </div>
+        <div class="activities__grid">
+          <article class="card">
+            <div class="card__icon">🐝</div>
+            <h3 class="card__title">Ruche pédagogique</h3>
+            <p class="card__desc">Observe les abeilles et déguste du miel</p>
+          </article>
+          <article class="card">
+            <div class="card__icon">🌊</div>
+            <h3 class="card__title">Océan virtuel</h3>
+            <p class="card__desc">Plonge dans l'océan en réalité augmentée</p>
+          </article>
+          <article class="card">
+            <div class="card__icon">🌱</div>
+            <h3 class="card__title">Atelier jardinage</h3>
+            <p class="card__desc">Crée ton herbier et rempote une plante</p>
+          </article>
+          <article class="card">
+            <div class="card__icon">🏆</div>
+            <h3 class="card__title">Grand jeu de piste</h3>
+            <p class="card__desc">Enquête nature dans le parc</p>
+          </article>
+          <article class="card">
+            <div class="card__icon">♻️</div>
+            <h3 class="card__title">Atelier recyclage</h3>
+            <p class="card__desc">Fabrique un objet à partir de matériaux recyclés</p>
+          </article>
+          <article class="card">
+            <div class="card__icon">🎨</div>
+            <h3 class="card__title">Fresque collaborative</h3>
+            <p class="card__desc">Peins une grande fresque de la biodiversité</p>
+          </article>
+        </div>
+      </div>
 
-        <article class="card">
-          <div class="card__icon">🌊</div>
-          <h3 class="card__title">Océan virtuel</h3>
-          <p class="card__desc">Plonge dans l'océan en réalité augmentée</p>
-        </article>
-
-        <article class="card">
-          <div class="card__icon">🎨</div>
-          <h3 class="card__title">Maquillage nature</h3>
-          <p class="card__desc">Transforme-toi en animal</p>
-        </article>
-
-        <article class="card">
-          <div class="card__icon">🧺</div>
-          <h3 class="card__title">Grande tombola</h3>
-          <p class="card__desc">Tente de gagner des cadeaux nature</p>
-        </article>
-
+      <!-- === COLLÈGE === -->
+      <div class="tabs__panel" id="panel-college" role="tabpanel" aria-labelledby="tab-college">
+        <div class="tabs__panel-header">
+          <p>Les plus grands passent à l'action et encadrent 🌟</p>
+        </div>
+        <div class="activities__grid">
+          <article class="card">
+            <div class="card__icon">🌊</div>
+            <h3 class="card__title">Océan virtuel</h3>
+            <p class="card__desc">Animation et démonstration pour les plus jeunes</p>
+          </article>
+          <article class="card">
+            <div class="card__icon">🧺</div>
+            <h3 class="card__title">Grande tombola</h3>
+            <p class="card__desc">Tente de gagner des cadeaux nature</p>
+          </article>
+          <article class="card">
+            <div class="card__icon">🎤</div>
+            <h3 class="card__title">Scène ouverte</h3>
+            <p class="card__desc">Spectacle, musique et poésie sur le thème de la nature</p>
+          </article>
+          <article class="card">
+            <div class="card__icon">🛠️</div>
+            <h3 class="card__title">Encadrement</h3>
+            <p class="card__desc">Aide à l'animation des ateliers pour les petits</p>
+          </article>
+          <article class="card">
+            <div class="card__icon">📸</div>
+            <h3 class="card__title">Exposition photo</h3>
+            <p class="card__desc">Photos de la biodiversité prises par les élèves</p>
+          </article>
+          <article class="card">
+            <div class="card__icon">🌿</div>
+            <h3 class="card__title">Stand de sensibilisation</h3>
+            <p class="card__desc">Agir pour la planète : éco-gestes et engagements</p>
+          </article>
+        </div>
       </div>
     </div>
   </section>
