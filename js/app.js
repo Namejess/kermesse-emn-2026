@@ -97,6 +97,11 @@ document.addEventListener('DOMContentLoaded', () => {
   if (savedTab && INDICES[savedTab]) {
     activateTab(savedTab, false);
     sessionStorage.removeItem('activeTab');
+    // Forcer le scroll vers #indices après le rendu des cartes
+    requestAnimationFrame(() => {
+      const target = document.getElementById('indices');
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
   }
 
 });

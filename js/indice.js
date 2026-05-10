@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     container.innerHTML = `
       <div class="indice-detail__error">
         <p>Indice introuvable.</p>
-        <a href="index.html" class="about__link">&larr; Retour aux indices</a>
+        <a href="index.html#indices" class="about__link back-link">&larr; Retour aux indices</a>
       </div>
     `;
     return;
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     container.innerHTML = `
       <div class="indice-detail__error">
         <p>Indice introuvable.</p>
-        <a href="index.html" class="about__link">&larr; Retour aux indices</a>
+        <a href="index.html#indices" class="about__link back-link">&larr; Retour aux indices</a>
       </div>
     `;
     return;
@@ -60,17 +60,16 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
     <h1 class="indice-detail__title" id="indice-title">${indice.title}</h1>
     <p class="indice-detail__desc">${indice.fullDesc}</p>
-    <a href="index.html" id="back-link" class="about__link">&larr; Retour aux indices</a>
+    <a href="index.html#indices" class="about__link back-link">&larr; Retour aux indices</a>
   `;
 
-  // Gestion du retour : préserver l'onglet actif
-  const backLink = document.getElementById('back-link');
-  if (backLink) {
-    backLink.addEventListener('click', (e) => {
+  // Gestion du retour : tous les .back-link préservent l'onglet actif
+  document.querySelectorAll('.back-link').forEach(link => {
+    link.addEventListener('click', (e) => {
       e.preventDefault();
       sessionStorage.setItem('activeTab', niveau);
       window.location.href = 'index.html#indices';
     });
-  }
+  });
 
 });
