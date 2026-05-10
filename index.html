@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+  <script src="js/data.js" defer></script>
   <script src="js/app.js" defer></script>
 </head>
 <body>
@@ -29,6 +30,7 @@
       </div>
       <p class="hero__tagline">Imaginons demain aujourd'hui</p>
       <h1 class="hero__title">Kermesse 2026</h1>
+
       <!-- Countdown -->
       <div class="countdown" id="countdown" aria-label="Compte à rebours">
         <div class="countdown__item">
@@ -72,7 +74,7 @@
     </div>
   </header>
 
-  <!-- ===== PROGRAMME ===== -->
+  <!-- ===== INDICES ===== -->
   <section class="programme" id="programme" aria-labelledby="programme-title">
     <div class="container">
       <h2 class="section-title" id="programme-title">Indices</h2>
@@ -86,113 +88,28 @@
 
       <!-- Panels -->
       <div class="tab-panels">
+
         <!-- Maternelle -->
-        <div class="tab-panel active" role="tabpanel" id="panel-maternelle" aria-labelledby="tab-maternelle">
+        <div class="tab-panel active" role="tabpanel" id="panel-maternelle" aria-labelledby="tab-maternelle" data-niveau="maternelle">
           <div class="activities-grid">
-            <div class="activity-card">
-              <div class="activity-card__emoji">🦋</div>
-              <h3 class="activity-card__title">Chasse aux papillons</h3>
-              <p class="activity-card__desc">Découvre les papillons du parc</p>
-            </div>
-            <div class="activity-card">
-              <div class="activity-card__emoji"></div>
-              <h3 class="activity-card__title">Atelier jardinage</h3>
-              <p class="activity-card__desc">Plante ta propre graine</p>
-            </div>
-            <div class="activity-card">
-              <div class="activity-card__emoji"></div>
-              <h3 class="activity-card__title">Ruche pédagogique</h3>
-              <p class="activity-card__desc">Les abeilles et le miel</p>
-            </div>
-            <div class="activity-card">
-              <div class="activity-card__emoji"></div>
-              <h3 class="activity-card__title">Maquillage nature</h3>
-              <p class="activity-card__desc">Transforme-toi en animal</p>
-            </div>
-            <div class="activity-card">
-              <div class="activity-card__emoji">🎵</div>
-              <h3 class="activity-card__title">Atelier musique</h3>
-              <p class="activity-card__desc">Instruments et chansons</p>
-            </div>
-            <div class="activity-card">
-              <div class="activity-card__emoji">🧺</div>
-              <h3 class="activity-card__title">Grande tombola</h3>
-              <p class="activity-card__desc">Tente de gagner des cadeaux</p>
-            </div>
+            <!-- Rempli par JS -->
           </div>
         </div>
 
         <!-- Primaire -->
-        <div class="tab-panel" role="tabpanel" id="panel-primaire" aria-labelledby="tab-primaire" hidden>
+        <div class="tab-panel" role="tabpanel" id="panel-primaire" aria-labelledby="tab-primaire" hidden data-niveau="primaire">
           <div class="activities-grid">
-            <div class="activity-card">
-              <div class="activity-card__emoji">🔬</div>
-              <h3 class="activity-card__title">Atelier sciences</h3>
-              <p class="activity-card__desc">Expériences et découvertes</p>
-            </div>
-            <div class="activity-card">
-              <div class="activity-card__emoji">🌍</div>
-              <h3 class="activity-card__title">Quiz biodiversité</h3>
-              <p class="activity-card__desc">Teste tes connaissances</p>
-            </div>
-            <div class="activity-card">
-              <div class="activity-card__emoji">🎭</div>
-              <h3 class="activity-card__title">Théâtre nature</h3>
-              <p class="activity-card__desc">Joue une pièce en plein air</p>
-            </div>
-            <div class="activity-card">
-              <div class="activity-card__emoji">🏃</div>
-              <h3 class="activity-card__title">Parcours sportif</h3>
-              <p class="activity-card__desc">Jeux et challenges</p>
-            </div>
-            <div class="activity-card">
-              <div class="activity-card__emoji"></div>
-              <h3 class="activity-card__title">Atelier photo</h3>
-              <p class="activity-card__desc">Capture la nature</p>
-            </div>
-            <div class="activity-card">
-              <div class="activity-card__emoji"></div>
-              <h3 class="activity-card__title">Grande tombola</h3>
-              <p class="activity-card__desc">Tente de gagner des cadeaux</p>
-            </div>
+            <!-- Rempli par JS -->
           </div>
         </div>
 
         <!-- Collège -->
-        <div class="tab-panel" role="tabpanel" id="panel-college" aria-labelledby="tab-college" hidden>
+        <div class="tab-panel" role="tabpanel" id="panel-college" aria-labelledby="tab-college" hidden data-niveau="college">
           <div class="activities-grid">
-            <div class="activity-card">
-              <div class="activity-card__emoji">🌿</div>
-              <h3 class="activity-card__title">Atelier permaculture</h3>
-              <p class="activity-card__desc">Crée ton propre écosystème</p>
-            </div>
-            <div class="activity-card">
-              <div class="activity-card__emoji"></div>
-              <h3 class="activity-card__title">Court-métrage nature</h3>
-              <p class="activity-card__desc">Réalise un film sur la biodiversité</p>
-            </div>
-            <div class="activity-card">
-              <div class="activity-card__emoji"></div>
-              <h3 class="activity-card__title">Scène ouverte</h3>
-              <p class="activity-card__desc">Musique et spectacles</p>
-            </div>
-            <div class="activity-card">
-              <div class="activity-card__emoji">🏆</div>
-              <h3 class="activity-card__title">Débat écolo</h3>
-              <p class="activity-card__desc">Échange et convaincs</p>
-            </div>
-            <div class="activity-card">
-              <div class="activity-card__emoji">🎨</div>
-              <h3 class="activity-card__title">Fresque collaborative</h3>
-              <p class="activity-card__desc">Peins pour la planète</p>
-            </div>
-            <div class="activity-card">
-              <div class="activity-card__emoji">🧺</div>
-              <h3 class="activity-card__title">Grande tombola</h3>
-              <p class="activity-card__desc">Tente de gagner des cadeaux</p>
-            </div>
+            <!-- Rempli par JS -->
           </div>
         </div>
+
       </div>
     </div>
   </section>

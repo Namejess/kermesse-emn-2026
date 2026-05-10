@@ -1,13 +1,12 @@
 // =============================================================
 // Kermesse 2026 — App
-// Countdown + Tabs (Maternelle / Primaire / Collège)
+// Countdown + Tabs + Rendu des cartes indices
 // =============================================================
 
 document.addEventListener('DOMContentLoaded', () => {
 
   // ===========================================================
-  // 1. COUNTDOWN
-  // Événement : lundi 8 juin 2026 à 8h
+  // 1. COUNTDOWN — Révélation du thème : 8 juin 8h
   // ===========================================================
   const EVENT_DATE = new Date('2026-06-08T08:00:00').getTime();
 
@@ -35,7 +34,35 @@ document.addEventListener('DOMContentLoaded', () => {
   setInterval(updateCountdown, 1000);
 
   // ===========================================================
-  // 2. TABS — Maternelle / Primaire / Collège
+  // 2. RENDU DES CARTES INDICES
+  // ===========================================================
+  function renderCards(niveau) {
+    const panel = document.querySelector(`.tab-panel[data-niveau="${niveau}"]`);
+    if (!panel) return;
+    const grid = panel.querySelector('.activities-grid');
+    if (!grid) return;
+
+    const indices = INDICES[niveau] || [];
+
+    grid.innerHTML = indices.map(indice => `
+      <a href="indice.html?niveau=${niveau}&num=${indice.num}" class="activity-card-link">
+        <div class="activity-card">
+          <span class="activity-card__badge">Indice ${indice.num}</span>
+          <div class="activity-card__emoji">${indice.emoji || ''}</div>
+          <h3 class="activity-card__title">${indice.title}</h3>
+          <p class="activity-card__desc">${indice.shortDesc}</p>
+        </div>
+      </a>
+    `).join('');
+  }
+
+  // Render all levels
+  renderCards('maternelle');
+  renderCards('primaire');
+  renderCards('college');
+
+  // ===========================================================
+  // 3. TABS — Maternelle / Primaire / Collège
   // ===========================================================
   const tabs = document.querySelectorAll('.tab');
   const panels = document.querySelectorAll('.tab-panel');
@@ -44,7 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
     tab.addEventListener('click', () => {
       const target = tab.dataset.tab;
 
-      // Update tabs
       tabs.forEach(t => {
         t.classList.remove('active');
         t.setAttribute('aria-selected', 'false');
@@ -52,7 +78,6 @@ document.addEventListener('DOMContentLoaded', () => {
       tab.classList.add('active');
       tab.setAttribute('aria-selected', 'true');
 
-      // Update panels
       panels.forEach(panel => {
         panel.classList.remove('active');
         panel.hidden = true;
