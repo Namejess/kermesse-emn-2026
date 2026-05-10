@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kermesse 2026 — Espace Montessori Nancy</title>
-  <meta name="description" content="Kermesse de l'Espace Montessori Nancy — Suis les indices chaque semaine pour découvrir le thème mystère !">
+  <meta name="description" content="Kermesse de l'Espace Montessori Nancy — Lundi 8 juin 2026">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔍</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
   <script src="js/app.js" defer></script>
 </head>
 <body>
@@ -54,7 +54,7 @@
           <span class="countdown__label">s</span>
         </div>
       </div>
-      <p class="countdown__event">🎯 Rendez-vous le <strong>lundi 8 juin 2026</strong> à 8h</p>
+      <p class="countdown__event">Rendez-vous le <strong>lundi 8 juin 2026</strong> à 8h</p>
 
       <div class="hero__info">
         <div class="hero__info-item">
@@ -68,51 +68,134 @@
           <span class="hero__info-icon">📍</span>
           <div>
             <strong>Espace Montessori Nancy</strong>
-            <span>Nancy, France</span>
+            <span>2 bis rue de Crédence, Villers-lès-Nancy</span>
           </div>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- ===== INDICE DE LA SEMAINE ===== -->
-  <section class="clue" id="clue" aria-labelledby="clue-title">
+  <!-- ===== PROGRAMME ===== -->
+  <section class="programme" id="programme" aria-labelledby="programme-title">
     <div class="container">
-      <div class="clue__badge">🔍 Indice de la semaine</div>
-      <h2 class="clue__week" id="clue-title">Semaine <span id="clue-week-num">1</span></h2>
-      <div class="clue__card" id="clue-card">
-        <p class="clue__text" id="clue-text">
-          — Aucun indice publié pour le moment —
-        </p>
-      </div>
-      <p class="clue__hint">Un nouvel indice chaque semaine jusqu'au jour J.</p>
-    </div>
-  </section>
+      <h2 class="section-title" id="programme-title">Au programme</h2>
 
-  <!-- ===== ARCHIVE DES INDICES ===== -->
-  <section class="archive" id="archive" aria-labelledby="archive-title">
-    <div class="container">
-      <button class="archive__toggle" id="archive-toggle" aria-expanded="false" aria-controls="archive-list">
-        <span>📂</span>
-        <span>Indices précédents</span>
-        <span class="archive__arrow">▾</span>
-      </button>
-      <div class="archive__list" id="archive-list" role="list">
-        <!-- Rempli par JS -->
+      <!-- Tabs -->
+      <div class="tabs" role="tablist" aria-label="Niveaux">
+        <button class="tab active" role="tab" aria-selected="true" aria-controls="panel-maternelle" id="tab-maternelle" data-tab="maternelle">Maternelle</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="panel-primaire" id="tab-primaire" data-tab="primaire">Primaire</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="panel-college" id="tab-college" data-tab="college">Collège</button>
       </div>
-    </div>
-  </section>
 
-  <!-- ===== BUVRETTE ===== -->
-  <section class="food" id="food" aria-labelledby="food-title">
-    <div class="container">
-      <div class="food__banner">
-        <span>🧁</span>
-        <div>
-          <h2 class="food__title" id="food-title">Buvette &amp; Gourmandises</h2>
-          <p>Sur place toute l'après-midi</p>
+      <!-- Panels -->
+      <div class="tab-panels">
+        <!-- Maternelle -->
+        <div class="tab-panel active" role="tabpanel" id="panel-maternelle" aria-labelledby="tab-maternelle">
+          <div class="activities-grid">
+            <div class="activity-card">
+              <div class="activity-card__emoji">🦋</div>
+              <h3 class="activity-card__title">Chasse aux papillons</h3>
+              <p class="activity-card__desc">Découvre les papillons du parc</p>
+            </div>
+            <div class="activity-card">
+              <div class="activity-card__emoji"></div>
+              <h3 class="activity-card__title">Atelier jardinage</h3>
+              <p class="activity-card__desc">Plante ta propre graine</p>
+            </div>
+            <div class="activity-card">
+              <div class="activity-card__emoji"></div>
+              <h3 class="activity-card__title">Ruche pédagogique</h3>
+              <p class="activity-card__desc">Les abeilles et le miel</p>
+            </div>
+            <div class="activity-card">
+              <div class="activity-card__emoji"></div>
+              <h3 class="activity-card__title">Maquillage nature</h3>
+              <p class="activity-card__desc">Transforme-toi en animal</p>
+            </div>
+            <div class="activity-card">
+              <div class="activity-card__emoji">🎵</div>
+              <h3 class="activity-card__title">Atelier musique</h3>
+              <p class="activity-card__desc">Instruments et chansons</p>
+            </div>
+            <div class="activity-card">
+              <div class="activity-card__emoji">🧺</div>
+              <h3 class="activity-card__title">Grande tombola</h3>
+              <p class="activity-card__desc">Tente de gagner des cadeaux</p>
+            </div>
+          </div>
         </div>
-        <span>🥤</span>
+
+        <!-- Primaire -->
+        <div class="tab-panel" role="tabpanel" id="panel-primaire" aria-labelledby="tab-primaire" hidden>
+          <div class="activities-grid">
+            <div class="activity-card">
+              <div class="activity-card__emoji">🔬</div>
+              <h3 class="activity-card__title">Atelier sciences</h3>
+              <p class="activity-card__desc">Expériences et découvertes</p>
+            </div>
+            <div class="activity-card">
+              <div class="activity-card__emoji">🌍</div>
+              <h3 class="activity-card__title">Quiz biodiversité</h3>
+              <p class="activity-card__desc">Teste tes connaissances</p>
+            </div>
+            <div class="activity-card">
+              <div class="activity-card__emoji">🎭</div>
+              <h3 class="activity-card__title">Théâtre nature</h3>
+              <p class="activity-card__desc">Joue une pièce en plein air</p>
+            </div>
+            <div class="activity-card">
+              <div class="activity-card__emoji">🏃</div>
+              <h3 class="activity-card__title">Parcours sportif</h3>
+              <p class="activity-card__desc">Jeux et challenges</p>
+            </div>
+            <div class="activity-card">
+              <div class="activity-card__emoji"></div>
+              <h3 class="activity-card__title">Atelier photo</h3>
+              <p class="activity-card__desc">Capture la nature</p>
+            </div>
+            <div class="activity-card">
+              <div class="activity-card__emoji"></div>
+              <h3 class="activity-card__title">Grande tombola</h3>
+              <p class="activity-card__desc">Tente de gagner des cadeaux</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Collège -->
+        <div class="tab-panel" role="tabpanel" id="panel-college" aria-labelledby="tab-college" hidden>
+          <div class="activities-grid">
+            <div class="activity-card">
+              <div class="activity-card__emoji">🌿</div>
+              <h3 class="activity-card__title">Atelier permaculture</h3>
+              <p class="activity-card__desc">Crée ton propre écosystème</p>
+            </div>
+            <div class="activity-card">
+              <div class="activity-card__emoji"></div>
+              <h3 class="activity-card__title">Court-métrage nature</h3>
+              <p class="activity-card__desc">Réalise un film sur la biodiversité</p>
+            </div>
+            <div class="activity-card">
+              <div class="activity-card__emoji"></div>
+              <h3 class="activity-card__title">Scène ouverte</h3>
+              <p class="activity-card__desc">Musique et spectacles</p>
+            </div>
+            <div class="activity-card">
+              <div class="activity-card__emoji">🏆</div>
+              <h3 class="activity-card__title">Débat écolo</h3>
+              <p class="activity-card__desc">Échange et convaincs</p>
+            </div>
+            <div class="activity-card">
+              <div class="activity-card__emoji">🎨</div>
+              <h3 class="activity-card__title">Fresque collaborative</h3>
+              <p class="activity-card__desc">Peins pour la planète</p>
+            </div>
+            <div class="activity-card">
+              <div class="activity-card__emoji">🧺</div>
+              <h3 class="activity-card__title">Grande tombola</h3>
+              <p class="activity-card__desc">Tente de gagner des cadeaux</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -123,18 +206,18 @@
       <h2 class="section-title" id="about-title">L'École</h2>
       <div class="about__content">
         <p>
-          <strong>L'Espace Montessori Nancy</strong> regroupe une micro-crèche, une école
-          maternelle et élémentaire, un collège ainsi qu'un accueil de loisirs,
-          proposant un accompagnement complet pour les enfants de 0 à 15 ans.
+          Depuis septembre 2024, l'Espace Montessori Nancy regroupe en un même lieu
+          une micro-crèche, une école maternelle et élémentaire, ainsi qu'un collège,
+          offrant un accompagnement complet pour les enfants de 0 à 15 ans.
         </p>
         <p>
-          Notre structure propose un cadre bienveillant et stimulant, fidèle aux
-          principes de la pédagogie Montessori, où chaque enfant peut grandir
-          à son rythme.
+          Située dans un environnement verdoyant, notre structure propose un cadre
+          bienveillant et stimulant, fidèle aux principes de la pédagogie Montessori,
+          où chaque enfant peut grandir à son rythme.
         </p>
       </div>
       <a href="https://www.espacemontessorinancy.fr" target="_blank" rel="noopener" class="about__link">
-        Visiter notre site →</a>
+        Visiter notre site</a>
     </div>
   </section>
 
@@ -154,9 +237,9 @@
       </div>
       <div class="footer__contact">
         <h3 class="footer__heading">Contact</h3>
-        <p>📧 contact@espacemontessorinancy.fr</p>
-        <p>📞 03 83 XX XX XX</p>
-        <p>📍 Nancy, France</p>
+        <p>2 bis rue de Crédence</p>
+        <p>54600 Villers-lès-Nancy (Clairlieu)</p>
+        <p>contact@espacemontessorinancy.fr</p>
       </div>
       <div class="footer__org">
         <h3 class="footer__heading">Organisé par</h3>

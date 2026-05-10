@@ -1,6 +1,7 @@
 /* ============================================================
-   Enquête 2026 — Espace Montessori Nancy
-   Mobile-first · Charte : #09454F · #29C4A9 · #FF6900
+   Kermesse 2026 — Espace Montessori Nancy
+   Mobile-first · Charte officielle : Poppins + Lato
+   Couleurs : #09454F · #29C4A9 · #FF6900 · #FCB900
    ============================================================ */
 
 /* ----- RESET & VARIABLES ----- */
@@ -13,7 +14,7 @@
 }
 
 :root {
-  /* Colors — charte Montessori */
+  /* Colors — charte officielle */
   --color-primary:       #09454F;
   --color-secondary:     #29C4A9;
   --color-accent:        #FF6900;
@@ -21,13 +22,13 @@
   --color-highlight:     #FCB900;
   --color-light:         #82C0C7;
   --color-bg:            #FFFFFF;
-  --color-text:          #09454F;
+  --color-text:          #464646;
   --color-text-light:    #555555;
-  --color-gray:          #F5F7FA;
+  --color-gray:          #F3F3F3;
 
-  /* Fonts */
-  --font-body:           'Open Sans', system-ui, -apple-system, sans-serif;
-  --font-heading:        'Open Sans', system-ui, -apple-system, sans-serif;
+  /* Fonts — charte officielle */
+  --font-body:           'Lato', system-ui, -apple-system, sans-serif;
+  --font-heading:        'Poppins', system-ui, -apple-system, sans-serif;
 
   /* Spacing */
   --space-xs:  0.25rem;
@@ -85,11 +86,11 @@ a:hover {
 /* ----- SECTION TITLES ----- */
 .section-title {
   font-family: var(--font-heading);
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   font-weight: 700;
   color: var(--color-primary);
   text-align: center;
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-xl);
 }
 
 /* ============================================================
@@ -123,7 +124,6 @@ a:hover {
 }
 
 .hero__logo-wrap {
-  /* Centered on mobile by default */
   display: flex;
   justify-content: center;
 }
@@ -135,6 +135,7 @@ a:hover {
 }
 
 .hero__tagline {
+  font-family: var(--font-body);
   font-size: 0.85rem;
   font-style: italic;
   color: var(--color-light);
@@ -153,6 +154,7 @@ a:hover {
 }
 
 .hero__subtitle {
+  font-family: var(--font-heading);
   font-size: 1.1rem;
   font-weight: 600;
   color: var(--color-secondary);
@@ -198,7 +200,7 @@ a:hover {
 }
 
 /* ============================================================
-   COUNTDOWN
+   COUNTDOWN — Vert #29C4A9 (charte officielle)
    ============================================================ */
 .countdown {
   display: flex;
@@ -219,7 +221,7 @@ a:hover {
   font-size: 2rem;
   font-weight: 800;
   line-height: 1;
-  color: var(--color-highlight);
+  color: var(--color-secondary);
   text-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
@@ -237,6 +239,7 @@ a:hover {
   opacity: 0.4;
   margin: 0 0.3rem;
   margin-bottom: 1.2rem;
+  color: var(--color-secondary);
 }
 
 .countdown__event {
@@ -246,185 +249,99 @@ a:hover {
 }
 
 /* ============================================================
-   CLUE — Indice de la semaine
+   PROGRAMME — Tabs + Activities
    ============================================================ */
-.clue {
+.programme {
   padding: var(--space-2xl) 0;
-  text-align: center;
 }
 
-.clue__badge {
-  display: inline-block;
-  background: var(--color-accent);
-  color: #fff;
-  font-size: 0.85rem;
-  font-weight: 700;
-  padding: var(--space-xs) var(--space-md);
-  border-radius: var(--radius-full);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: var(--space-md);
-}
-
-.clue__week {
-  font-family: var(--font-heading);
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: var(--color-primary);
-  margin-bottom: var(--space-lg);
-}
-
-.clue__card {
-  background: linear-gradient(135deg, var(--color-primary), #0B5E6B);
-  color: #fff;
-  border-radius: var(--radius-lg);
-  padding: var(--space-xl) var(--space-lg);
-  max-width: 36rem;
-  margin: 0 auto;
-  box-shadow: 0 6px 24px rgba(9, 69, 79, 0.25);
-  position: relative;
-  overflow: hidden;
-  min-height: 6rem;
+/* Tabs */
+.tabs {
   display: flex;
-  align-items: center;
   justify-content: center;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-xl);
+  flex-wrap: wrap;
 }
 
-.clue__card::before {
-  content: '🔍';
-  position: absolute;
-  top: -0.5rem;
-  right: -0.5rem;
-  font-size: 4rem;
-  opacity: 0.1;
-  transform: rotate(15deg);
-}
-
-.clue__text {
+.tab {
   font-family: var(--font-heading);
-  font-size: 1.15rem;
+  font-size: 0.9rem;
   font-weight: 600;
-  line-height: 1.6;
-  position: relative;
-  z-index: 1;
-}
-
-.clue__hint {
-  font-size: 0.85rem;
-  color: var(--color-text-light);
-  margin-top: var(--space-md);
-}
-
-/* ============================================================
-   ARCHIVE — Indices précédents
-   ============================================================ */
-.archive {
-  padding: 0 0 var(--space-2xl);
-}
-
-.archive__toggle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-sm);
-  width: 100%;
-  padding: var(--space-md);
-  background: var(--color-gray);
+  padding: var(--space-sm) var(--space-lg);
   border: 2px solid var(--color-light);
-  border-radius: var(--radius-md);
-  cursor: pointer;
-  font-family: var(--font-heading);
-  font-size: 0.95rem;
-  font-weight: 600;
+  border-radius: var(--radius-full);
+  background: transparent;
   color: var(--color-primary);
+  cursor: pointer;
   transition: all 0.25s ease;
 }
 
-.archive__toggle:hover {
-  background: var(--color-light);
+.tab:hover {
   border-color: var(--color-secondary);
+  background: rgba(41, 196, 169, 0.08);
 }
 
-.archive__toggle[aria-expanded="true"] .archive__arrow {
-  transform: rotate(180deg);
+.tab.active {
+  background: var(--color-secondary);
+  border-color: var(--color-secondary);
+  color: #fff;
 }
 
-.archive__arrow {
-  transition: transform 0.25s ease;
-  font-size: 0.8rem;
-}
-
-.archive__list {
+/* Tab Panels */
+.tab-panel {
   display: none;
-  margin-top: var(--space-md);
-  flex-direction: column;
-  gap: var(--space-sm);
+  animation: fadeIn 0.3s ease;
 }
 
-.archive__list.is-open {
-  display: flex;
+.tab-panel.active {
+  display: block;
 }
 
-.archive__item {
-  display: flex;
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Activities Grid */
+.activities-grid {
+  display: grid;
+  grid-template-columns: 1fr;
   gap: var(--space-md);
-  align-items: flex-start;
+}
+
+.activity-card {
   background: var(--color-gray);
   border-radius: var(--radius-md);
-  padding: var(--space-md);
-  border-left: 4px solid var(--color-secondary);
+  padding: var(--space-lg);
+  text-align: center;
+  border: 2px solid transparent;
+  transition: all 0.25s ease;
 }
 
-.archive__item-week {
+.activity-card:hover {
+  border-color: var(--color-secondary);
+  box-shadow: 0 4px 12px rgba(41, 196, 169, 0.15);
+}
+
+.activity-card__emoji {
+  font-size: 2rem;
+  margin-bottom: var(--space-sm);
+  min-height: 2.5rem;
+}
+
+.activity-card__title {
   font-family: var(--font-heading);
+  font-size: 1rem;
   font-weight: 700;
-  font-size: 0.85rem;
-  color: var(--color-secondary);
-  white-space: nowrap;
-  min-width: 4.5rem;
+  color: var(--color-primary);
+  margin-bottom: var(--space-xs);
 }
 
-.archive__item-text {
-  font-size: 0.9rem;
+.activity-card__desc {
+  font-size: 0.85rem;
   color: var(--color-text-light);
   line-height: 1.5;
-}
-
-/* ============================================================
-   FOOD
-   ============================================================ */
-.food {
-  padding: var(--space-2xl) 0;
-}
-
-.food__banner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-md);
-  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
-  color: #fff;
-  padding: var(--space-lg);
-  border-radius: var(--radius-lg);
-  box-shadow: 0 4px 14px rgba(255, 105, 0, 0.25);
-  text-align: center;
-  font-size: 1.8rem;
-}
-
-.food__banner > div {
-  display: flex;
-  flex-direction: column;
-}
-
-.food__title {
-  font-family: var(--font-heading);
-  font-size: 1.2rem;
-  font-weight: 700;
-}
-
-.food__banner p {
-  font-size: 0.85rem;
-  opacity: 0.9;
 }
 
 /* ============================================================
@@ -452,14 +369,20 @@ a:hover {
 .about__link {
   display: inline-block;
   margin-top: var(--space-lg);
+  font-family: var(--font-heading);
   font-weight: 600;
   color: var(--color-primary);
   text-align: center;
   width: 100%;
+  padding: var(--space-sm) var(--space-lg);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-full);
+  transition: all 0.25s ease;
 }
 
 .about__link:hover {
-  color: var(--color-accent);
+  background: var(--color-primary);
+  color: #fff;
 }
 
 /* ============================================================
@@ -488,6 +411,7 @@ a:hover {
 }
 
 .footer__tagline {
+  font-family: var(--font-body);
   font-style: italic;
   color: var(--color-light);
   font-size: 0.85rem;
@@ -569,20 +493,12 @@ a:hover {
     min-width: 3.5rem;
   }
 
-  .clue__card {
-    padding: var(--space-2xl) var(--space-xl);
+  .section-title {
+    font-size: 2rem;
   }
 
-  .clue__text {
-    font-size: 1.3rem;
-  }
-
-  .food__banner {
-    font-size: 2.2rem;
-  }
-
-  .food__title {
-    font-size: 1.4rem;
+  .activities-grid {
+    grid-template-columns: 1fr 1fr;
   }
 
   .footer__inner {
@@ -626,17 +542,8 @@ a:hover {
     min-width: 4rem;
   }
 
-  .clue__text {
-    font-size: 1.45rem;
-  }
-
-  .food__banner {
-    font-size: 2.5rem;
-    padding: var(--space-xl);
-  }
-
-  .food__title {
-    font-size: 1.6rem;
+  .activities-grid {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
@@ -651,11 +558,6 @@ a:hover {
   }
   .hero__info-item {
     background: rgba(255,255,255,0.12) !important;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-  }
-  .food__banner {
-    background: var(--color-accent) !important;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
