@@ -514,11 +514,82 @@ a:hover {
   display: block;
 }
 
-/* ----- Audio local ----- */
+/* ----- Audio player personnalisé ----- */
 .indice-detail__player {
   margin-bottom: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
 }
 
+.audio-play-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  background: var(--color-secondary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-full);
+  padding: var(--space-md) var(--space-xl);
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  min-width: 10rem;
+  box-shadow: 0 4px 12px rgba(41, 196, 169, 0.3);
+}
+
+.audio-play-btn:hover {
+  background: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(9, 69, 79, 0.3);
+}
+
+.audio-play-btn:active {
+  transform: translateY(0);
+}
+
+.audio-play-btn.is-playing {
+  background: var(--color-accent);
+  box-shadow: 0 4px 12px rgba(255, 105, 0, 0.3);
+}
+
+.audio-play-btn.is-playing:hover {
+  background: var(--color-accent-light);
+}
+
+.audio-play-btn__icon {
+  font-size: 1.3rem;
+}
+
+.audio-progress {
+  width: 100%;
+  max-width: 18rem;
+  height: 0.5rem;
+  background: var(--color-gray);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.audio-progress__bar {
+  height: 100%;
+  width: 0%;
+  background: var(--color-secondary);
+  border-radius: var(--radius-full);
+  transition: width 0.1s linear;
+}
+
+.audio-time {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  font-family: var(--font-heading);
+}
+
+/* Ancien player natif (fallback) */
 .indice-detail__audio {
   width: 100%;
   max-width: 24rem;

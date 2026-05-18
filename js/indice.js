@@ -70,10 +70,17 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="indice-detail__desc">${indice.fullDesc}</div>
           ${hasSrc ? `
             <div class="indice-detail__player">
-              <audio controls class="indice-detail__audio" preload="metadata">
+              <audio id="audio-player" preload="metadata">
                 <source src="${indice.audioSrc}" type="audio/mpeg">
-                Ton navigateur ne supporte pas la lecture audio.
               </audio>
+              <button class="audio-play-btn" id="audio-play-btn" aria-label="Écouter l'audio">
+                <span class="audio-play-btn__icon" id="audio-play-icon">▶</span>
+                <span class="audio-play-btn__label" id="audio-play-label">Écouter</span>
+              </button>
+              <div class="audio-progress" id="audio-progress">
+                <div class="audio-progress__bar" id="audio-progress-bar"></div>
+              </div>
+              <div class="audio-time" id="audio-time">0:00 / 0:00</div>
             </div>
           ` : ''}
         `;
@@ -160,5 +167,73 @@ document.addEventListener('DOMContentLoaded', () => {
       window.location.href = 'index.html#indices';
     });
   });
+
+  // ===========================================================
+  // 7. AUDIO PLAYER PERSONNALISÉ
+  // ===========================================================
+  const audioPlayer = document.getElementById('audio-player');
+  const playBtn = document.getElementById('audio-play-btn');
+  const playIcon = document.getElementById('audio-play-icon');
+  const playLabel = document.getElementById('audio-play-label');
+  const progressBar = document.getElementById('audio-progress-bar');
+  const progressContainer = document.getElementById('audio-progress');
+  const timeDisplay = document.getElementById('audio-time');
+
+  if (audioPlayer && playBtn) {
+    // Toggle play/pause
+    playBtn.addEventListener('click', () => {
+      if (audioPlayer.paused) {
+        audioPlayer.play();
+      } else {
+        audioPlayer.pause();
+      }
+    });
+
+    // Update UI on play/pause
+    audioPlayer.addEventListener('play', () => {
+      playIcon.textContent = '⏸';
+      playLabel.textContent = 'Pause';
+      playBtn.classList.add('is-playing');
+    });
+
+    audioPlayer.addEventListener('pause', () => {
+      playIcon.textContent = '▶';
+      playLabel.textContent = 'Écouter';
+      playBtn.classList.remove('is-playing');
+    });
+
+    // Update progress bar
+    audioPlayer.addEventListener('timeupdate', () => {
+      if (audioPlayer.duration) {
+        const percent = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+        progressBar.style.width = percent + '%';
+        timeDisplay.textContent = formatTime(audioPlayer.currentTime) + ' / ' + formatTime(audioPlayer.duration);
+      }
+    });
+
+    // Click on progress bar to seek
+    if (progressContainer) {
+      progressContainer.addEventListener('click', (e) => {
+        const rect = progressContainer.getBoundingClientRect();
+        const percent = (e.clientX - rect.left) / rect.width;
+        audioPlayer.currentTime = percent * audioPlayer.duration;
+      });
+    }
+
+    // Reset when ended
+    audioPlayer.addEventListener('ended', () => {
+      playIcon.textContent = '▶';
+      playLabel.textContent = 'Écouter';
+      playBtn.classList.remove('is-playing');
+      progressBar.style.width = '0%';
+    });
+
+    // Format time helper
+    function formatTime(seconds) {
+      const mins = Math.floor(seconds / 60);
+      const secs = Math.floor(seconds % 60);
+      return mins + ':' + (secs < 10 ? '0' : '') + secs;
+    }
+  }
 
 });
