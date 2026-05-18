@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const indices = INDICES[niveau] || [];
 
     grid.innerHTML = indices.map(indice => {
-      const isRevealed = indice.num === 1;
+      const isRevealed = indice.fullDesc && indice.fullDesc !== 'Patientez pour recevoir ce nouvel indice !';
       return `
       <a href="indice.html?niveau=${niveau}&num=${indice.num}" class="activity-card-link">
         <div class="activity-card">

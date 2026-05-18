@@ -489,14 +489,6 @@ a:hover {
   margin-bottom: var(--space-lg);
 }
 
-.indice-detail__desc {
-  font-size: 1rem;
-  color: var(--color-text-light);
-  line-height: 1.7;
-  margin-bottom: var(--space-xl);
-  text-align: center;
-}
-
 .indice-detail__error {
   text-align: center;
   padding: var(--space-2xl);
@@ -506,6 +498,180 @@ a:hover {
   font-size: 1.1rem;
   color: var(--color-text-light);
   margin-bottom: var(--space-lg);
+}
+
+/* ----- Image dans indice ----- */
+.indice-detail__image-wrap {
+  margin-bottom: var(--space-lg);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.indice-detail__image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ----- Audio local ----- */
+.indice-detail__player {
+  margin-bottom: var(--space-lg);
+}
+
+.indice-detail__audio {
+  width: 100%;
+  max-width: 24rem;
+  height: 3rem;
+  border-radius: var(--radius-md);
+  outline: none;
+}
+
+.indice-detail__audio::-webkit-media-controls-panel {
+  background: var(--color-gray);
+  border-radius: var(--radius-md);
+}
+
+.indice-detail__audio::-webkit-media-controls-play-button {
+  background: var(--color-secondary);
+  border-radius: 50%;
+  color: #fff;
+}
+
+.indice-detail__audio:focus {
+  box-shadow: 0 0 0 3px rgba(41, 196, 169, 0.3);
+}
+
+/* ----- Lightbox / Zoom image ----- */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(4px);
+  cursor: zoom-out;
+  animation: lightbox-fade-in 0.25s ease;
+}
+
+.lightbox[hidden] {
+  display: none;
+}
+
+@keyframes lightbox-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.lightbox__img {
+  max-width: 90vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  border-radius: var(--radius-md);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  cursor: default;
+  animation: lightbox-zoom-in 0.3s ease;
+}
+
+@keyframes lightbox-zoom-in {
+  from { transform: scale(0.85); opacity: 0; }
+  to   { transform: scale(1);    opacity: 1; }
+}
+
+.lightbox__close {
+  position: absolute;
+  top: var(--space-lg);
+  right: var(--space-lg);
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+  line-height: 1;
+}
+
+.lightbox__close:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.indice-detail__zoom-hint {
+  font-size: 0.85rem;
+  color: var(--color-light);
+  margin-top: calc(-1 * var(--space-md));
+  margin-bottom: var(--space-lg);
+  text-align: center;
+}
+
+/* ----- Jeu d'association ----- */
+.indice-game {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+  max-width: 24rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.indice-game__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  background: var(--color-bg);
+  border: 2px solid var(--color-light);
+  border-radius: var(--radius-md);
+  padding: var(--space-sm) var(--space-md);
+  transition: border-color 0.2s;
+}
+
+.indice-game__row:hover {
+  border-color: var(--color-secondary);
+}
+
+.indice-game__left,
+.indice-game__right {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+}
+
+.indice-game__left {
+  background: rgba(41, 196, 169, 0.1);
+  color: var(--color-primary);
+}
+
+.indice-game__right {
+  background: rgba(255, 105, 0, 0.1);
+  color: var(--color-accent);
+}
+
+.indice-game__arrow {
+  font-size: 1.2rem;
+  color: var(--color-light);
+  flex-shrink: 0;
+}
+
+/* ----- Desc utilise div (pas p) pour le HTML riche ----- */
+.indice-detail__desc {
+  font-size: 1rem;
+  color: var(--color-text-light);
+  line-height: 1.7;
+  margin-bottom: var(--space-lg);
+  text-align: center;
 }
 
 /* ============================================================
