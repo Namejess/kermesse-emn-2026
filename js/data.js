@@ -7,10 +7,10 @@ const INDICES = {
     { num: 1, title: 'Cherche et trouve', emoji: '', shortDesc: 'Patientez...', fullDesc: 'Trouve dehors quelque chose de vert, quelque chose qui vole et quelque chose qui pousse dans la terre.', duration: '', age: '' },
     {
       num: 2,
-      title: 'Coccinelle demoiselle',
+      title: 'Écoute la chanson',
       emoji: '🐞',
       shortDesc: 'Écoute la chanson',
-      fullDesc: 'Écoute la chanson... De quel animal parle-t-on ?',
+      fullDesc: 'De quel animal parle-t-on ?',
       duration: '',
       age: '',
       type: 'audio',
