@@ -10,7 +10,7 @@ const INDICES = {
       title: 'Coccinelle demoiselle',
       emoji: '🐞',
       shortDesc: 'Écoute la chanson',
-      fullDesc: 'Écoute la chanson "Coccinelle demoiselle" et découvre quel animal se cache dans la mélodie !',
+      fullDesc: 'Écoute la chanson... De quel animal parle-t-on ?',
       duration: '',
       age: '',
       type: 'audio',
