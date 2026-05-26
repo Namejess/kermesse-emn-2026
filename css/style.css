@@ -736,6 +736,110 @@ a:hover {
   flex-shrink: 0;
 }
 
+/* ----- Recette stylisée ----- */
+.recipe-card {
+  background: linear-gradient(135deg, rgba(41, 196, 169, 0.08) 0%, rgba(252, 185, 0, 0.08) 100%);
+  border: 2px dashed var(--color-secondary);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg) var(--space-xl);
+  margin-bottom: var(--space-xl);
+  max-width: 22rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+.recipe-card__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-sm);
+  border-bottom: 2px solid rgba(41, 196, 169, 0.2);
+}
+
+.recipe-card__icon {
+  font-size: 1.5rem;
+}
+
+.recipe-card__label {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.recipe-card__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.recipe-card__item {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-text);
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-bg);
+  border-radius: var(--radius-md);
+  border-left: 4px solid var(--color-accent);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.recipe-card__item:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+.recipe-question {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  background: rgba(255, 105, 0, 0.08);
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius-md);
+  display: inline-block;
+}
+
+/* ----- Carte texte (devinette, énigme) ----- */
+.indice-text-card {
+  background: var(--color-bg);
+  border: 2px solid var(--color-light);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl) var(--space-xl);
+  margin-bottom: var(--space-lg);
+  text-align: center;
+  max-width: 28rem;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.indice-text-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.indice-text-card__emoji {
+  font-size: 3rem;
+  margin-bottom: var(--space-sm);
+  line-height: 1.2;
+}
+
+.indice-text-card__content {
+  font-size: 1.1rem;
+  color: var(--color-text);
+  line-height: 1.8;
+  font-weight: 400;
+  white-space: pre-line;
+}
+
 /* ----- Desc utilise div (pas p) pour le HTML riche ----- */
 .indice-detail__desc {
   font-size: 1rem;

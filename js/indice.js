@@ -86,6 +86,22 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
       }
 
+      case 'recipe': {
+        const items = indice.recipeItems || [];
+        return `
+          <div class="recipe-card">
+            <div class="recipe-card__header">
+              <span class="recipe-card__icon">🧪</span>
+              <span class="recipe-card__label">Ingrédients</span>
+            </div>
+            <ul class="recipe-card__list">
+              ${items.map(item => `<li class="recipe-card__item">${item}</li>`).join('')}
+            </ul>
+          </div>
+          <div class="indice-detail__desc recipe-question">${indice.fullDesc}</div>
+        `;
+      }
+
       case 'game': {
         const items = indice.gameItems || [];
         return `
@@ -103,7 +119,12 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       default:
-        return `<div class="indice-detail__desc">${indice.fullDesc}</div>`;
+        return `
+          <div class="indice-text-card">
+            ${indice.emoji ? `<div class="indice-text-card__emoji">${indice.emoji}</div>` : ''}
+            <div class="indice-text-card__content">${indice.fullDesc}</div>
+          </div>
+        `;
     }
   }
 
