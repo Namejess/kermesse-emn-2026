@@ -126,7 +126,7 @@ const INDICES = {
       shortDesc: 'Trouve le mot',
       fullDesc: `Je suis un mot-valise né du mariage de la science et de la nature.
 
-• Mon préfixe vient du grec ancien « bio » qui signifie « la vie ».
+• Mon préfixe vient du grec ancien qui signifie « la vie ».
 • Mon suffixe désigne la pluralité, le fait que nous soyons tous différents et multiples.
 
 Je désigne le tissu vivant de notre planète, qui va de la plus petite bactérie invisible à la majestueuse baleine bleue. Aujourd'hui, je suis fragile et la kermesse me fête pour apprendre à me protéger.
