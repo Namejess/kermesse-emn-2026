@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kermesse 2026 — Espace Montessori Nancy</title>
+  <meta name="description" content="Kermesse de l'Espace Montessori Nancy — Samedi 13 juin 2026 de 14h à 17h">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+  <script src="js/data.js?v=2" defer></script>
+  <script src="js/app.js?v=2" defer></script>
+</head>
+<body>
+
+  <!-- ===== HERO ===== -->
+  <header class="hero" id="hero">
+    <div class="hero__inner container">
+      <div class="hero__logo-wrap">
+        <img
+          src="images/logo-espace-montessori-nancy-blanc.png"
+          alt="Espace Montessori Nancy"
+          class="hero__logo"
+          width="288"
+          height="193"
+          loading="lazy"
+        >
+      </div>
+      <p class="hero__tagline">Imaginons demain aujourd'hui</p>
+      <h1 class="hero__title">Kermesse 2026</h1>
+
+      <!-- Countdown -->
+      <div class="countdown" id="countdown" aria-label="Compte à rebours">
+        <div class="countdown__item">
+          <span class="countdown__num" id="countdown-days">--</span>
+          <span class="countdown__label">jours</span>
+        </div>
+        <div class="countdown__sep">:</div>
+        <div class="countdown__item">
+          <span class="countdown__num" id="countdown-hours">--</span>
+          <span class="countdown__label">h</span>
+        </div>
+        <div class="countdown__sep">:</div>
+        <div class="countdown__item">
+          <span class="countdown__num" id="countdown-minutes">--</span>
+          <span class="countdown__label">min</span>
+        </div>
+        <div class="countdown__sep">:</div>
+        <div class="countdown__item">
+          <span class="countdown__num" id="countdown-seconds">--</span>
+          <span class="countdown__label">s</span>
+        </div>
+      </div>
+      <p class="countdown__event">Rendez-vous le <strong>lundi 8 juin</strong> à 8h pour la révélation du thème !</p>
+
+      <div class="hero__info">
+        <div class="hero__info-item">
+          <span class="hero__info-icon">📅</span>
+          <div>
+            <strong>Samedi 13 juin 2026</strong>
+            <span>de 14h à 17h</span>
+          </div>
+        </div>
+        <div class="hero__info-item">
+          <span class="hero__info-icon">📍</span>
+          <div>
+            <strong>Espace Montessori Nancy</strong>
+            <span>2 bis rue de Crédence, Villers-lès-Nancy</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== INDICES ===== -->
+  <section class="programme" id="programme" aria-labelledby="programme-title">
+    <div class="container">
+      <h2 class="section-title" id="programme-title">Indices</h2>
+
+      <!-- Tabs -->
+      <div class="tabs" role="tablist" aria-label="Niveaux">
+        <button class="tab active" role="tab" aria-selected="true" aria-controls="panel-maternelle" id="tab-maternelle" data-tab="maternelle">Maternelle</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="panel-primaire" id="tab-primaire" data-tab="primaire">Elémentaire</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="panel-college" id="tab-college" data-tab="college">Collège</button>
+      </div>
+
+      <!-- Panels -->
+      <div class="tab-panels">
+
+        <!-- Maternelle -->
+        <div class="tab-panel active" role="tabpanel" id="panel-maternelle" aria-labelledby="tab-maternelle" data-niveau="maternelle">
+          <div class="activities-grid">
+            <!-- Rempli par JS -->
+          </div>
+        </div>
+
+        <!-- Primaire -->
+        <div class="tab-panel" role="tabpanel" id="panel-primaire" aria-labelledby="tab-primaire" hidden data-niveau="primaire">
+          <div class="activities-grid">
+            <!-- Rempli par JS -->
+          </div>
+        </div>
+
+        <!-- Collège -->
+        <div class="tab-panel" role="tabpanel" id="panel-college" aria-labelledby="tab-college" hidden data-niveau="college">
+          <div class="activities-grid">
+            <!-- Rempli par JS -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="about" id="about" aria-labelledby="about-title">
+    <div class="container">
+      <h2 class="section-title" id="about-title">Qui sommes-nous ?</h2>
+      <div class="about__content">
+        <p>
+          Depuis septembre 2024, l'Espace Montessori Nancy regroupe en un même lieu
+          une micro-crèche, une école maternelle et élémentaire, ainsi qu'un collège,
+          offrant un accompagnement complet pour les enfants de 0 à 15 ans. Nous proposons également des ateliers parents/enfants et un accueil de loisirs ouvert à tous.
+        </p>
+        <p>
+          Située dans un environnement verdoyant, notre structure propose un cadre
+          bienveillant et stimulant, fidèle aux principes de la pédagogie Montessori,
+          où chaque enfant peut grandir à son rythme.
+        </p>
+      </div>
+      <div style="text-align:center">
+        <a href="https://www.espacemontessorinancy.fr" target="_blank" rel="noopener" class="about__link">
+          Visiter notre site</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" id="contact">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img
+          src="images/logo-espace-montessori-nancy-blanc.png"
+          alt="Espace Montessori Nancy"
+          class="footer__logo"
+          width="200"
+          height="134"
+          loading="lazy"
+        >
+        <p class="footer__tagline">Imaginons demain aujourd'hui</p>
+      </div>
+      <div class="footer__contact">
+        <h3 class="footer__heading">Contact</h3>
+        <p>2 bis rue de Crédence</p>
+        <p>54600 Villers-lès-Nancy (Clairlieu)</p>
+        <a href="https://www.espacemontessorinancy.fr/contact/" target="_blank" rel="noopener" class="footer__link">Nous contacter</a>
+      </div>
+      <div class="footer__org">
+        <h3 class="footer__heading">Organisé par</h3>
+        <p>Le Club des Parents d'élèves</p>
+        <p class="footer__date">Kermesse 2026</p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <p>© 2026 Espace Montessori Nancy</p>
+      </div>
+    </div>
+  </footer>
+
+  
+</body>
+</html>
