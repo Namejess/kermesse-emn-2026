@@ -840,6 +840,80 @@ a:hover {
   white-space: pre-line;
 }
 
+/* ----- Code animaux / code secret ----- */
+.cipher-key {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(8.5rem, 1fr));
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.cipher-key__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  background: var(--color-bg);
+  border: 2px solid var(--color-light);
+  border-radius: var(--radius-md);
+  padding: var(--space-sm) var(--space-xs);
+  text-align: center;
+}
+
+.cipher-key__letter {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--color-accent);
+}
+
+.cipher-key__animal {
+  font-size: 0.8rem;
+  color: var(--color-text-light);
+}
+
+.cipher-key__emoji {
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+.cipher-message {
+  background: var(--color-bg);
+  border: 2px solid var(--color-accent);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  text-align: center;
+  margin-bottom: var(--space-md);
+}
+
+.cipher-message__label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-sm);
+}
+
+.cipher-message__content {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  letter-spacing: 0.08em;
+}
+
+.cipher-message--numeric .cipher-message__content {
+  font-size: 1.2rem;
+  font-family: monospace;
+  letter-spacing: 0.04em;
+}
+
+.cipher-hint {
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--color-text-light);
+  font-style: italic;
+}
+
 /* ----- Desc utilise div (pas p) pour le HTML riche ----- */
 .indice-detail__desc {
   font-size: 1rem;

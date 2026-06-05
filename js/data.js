@@ -24,7 +24,30 @@ const INDICES = {
       duration: '',
       age: ''
     },
-    { num: 4, title: 'Indice 4', emoji: '🎨', shortDesc: 'Patientez...', fullDesc: 'Patientez pour recevoir ce nouvel indice !', duration: '', age: '' },
+    {
+      num: 4,
+      title: 'Code animaux',
+      emoji: '🌿',
+      shortDesc: 'Décode les animaux',
+      fullDesc: 'Remplace chaque lettre par un animal, puis décode le message :',
+      duration: '',
+      age: '',
+      type: 'animal-code',
+      cipherKey: [
+        { letter: 'A', animal: 'Abeille', emoji: '🐝' },
+        { letter: 'B', animal: 'Baleine', emoji: '🐳' },
+        { letter: 'D', animal: 'Dauphin', emoji: '🐬' },
+        { letter: 'E', animal: 'Écureuil', emoji: '🐿️' },
+        { letter: 'I', animal: 'Iguane', emoji: '🦎' },
+        { letter: 'O', animal: 'Ours', emoji: '🐻' },
+        { letter: 'R', animal: 'Renard', emoji: '🦊' },
+        { letter: 'S', animal: 'Serpent', emoji: '🐍' },
+        { letter: 'T', animal: 'Tortue', emoji: '🐢' },
+        { letter: 'V', animal: 'Vache', emoji: '🐄' },
+        { letter: 'Y', animal: 'Yak', emoji: '🐂' },
+      ],
+      encodedMessage: '🐳 🦎 🐻 🐬 🦎 🐄 É 🦊 🐍 🦎 🐢 É',
+    },
   ],
   primaire: [
     { num: 1, title: 'Qui suis-je ?', emoji: '', shortDesc: 'Patientez...', fullDesc: 'Tout ce qui est vivant est concerné.', duration: '', age: '' },
@@ -57,7 +80,18 @@ const INDICES = {
         'un océan',
       ],
     },
-    { num: 4, title: 'Indice 4', emoji: '', shortDesc: 'Patientez...', fullDesc: 'Patientez pour recevoir ce nouvel indice !', duration: '', age: '' },
+    {
+      num: 4,
+      title: 'Code secret',
+      emoji: '🔐',
+      shortDesc: 'Décode le message',
+      fullDesc: 'Décode ce message pour trouver le mot mystère :',
+      duration: '',
+      age: '',
+      type: 'secret-code',
+      codedMessage: '2-9-15-4-9-22-5-18-19-9-20-5',
+      cipherHint: 'A=1, B=2, C=3…',
+    },
   ],
   college: [
     { num: 1, title: 'Qui suis-je', emoji: '', shortDesc: 'Patientez...', fullDesc: 'Je suis tout ce qui vit sur Terre, du plus petit au plus grand, sans moi aucun équilibre n\'est possible. Qui suis-je ?', duration: '', age: '' },
@@ -85,6 +119,21 @@ const INDICES = {
       duration: '',
       age: ''
     },
-    { num: 4, title: 'Indice 4', emoji: '🌊', shortDesc: 'Patientez...', fullDesc: 'Patientez pour recevoir ce nouvel indice !', duration: '', age: '' },
+    {
+      num: 4,
+      title: 'Étymologie',
+      emoji: '🧩',
+      shortDesc: 'Trouve le mot',
+      fullDesc: `Je suis un mot-valise né du mariage de la science et de la nature.
+
+• Mon préfixe vient du grec ancien « bio » qui signifie « la vie ».
+• Mon suffixe désigne la pluralité, le fait que nous soyons tous différents et multiples.
+
+Je désigne le tissu vivant de notre planète, qui va de la plus petite bactérie invisible à la majestueuse baleine bleue. Aujourd'hui, je suis fragile et la kermesse me fête pour apprendre à me protéger.
+
+Qui suis-je ?`,
+      duration: '',
+      age: '',
+    },
   ],
 };

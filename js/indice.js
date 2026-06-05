@@ -118,6 +118,36 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
       }
 
+      case 'animal-code': {
+        const key = indice.cipherKey || [];
+        return `
+          <div class="indice-detail__desc">${indice.fullDesc}</div>
+          <div class="cipher-key">
+            ${key.map(item => `
+              <div class="cipher-key__item">
+                <span class="cipher-key__letter">${item.letter}</span>
+                <span class="cipher-key__animal">${item.animal}</span>
+                <span class="cipher-key__emoji">${item.emoji}</span>
+              </div>
+            `).join('')}
+          </div>
+          <div class="cipher-message">
+            <span class="cipher-message__label">Message codé</span>
+            <span class="cipher-message__content">${indice.encodedMessage}</span>
+          </div>
+        `;
+      }
+
+      case 'secret-code':
+        return `
+          <div class="indice-detail__desc">${indice.fullDesc}</div>
+          <div class="cipher-message cipher-message--numeric">
+            <span class="cipher-message__label">Message codé</span>
+            <span class="cipher-message__content">${indice.codedMessage}</span>
+          </div>
+          <p class="cipher-hint">${indice.cipherHint}</p>
+        `;
+
       default:
         return `
           <div class="indice-text-card">
